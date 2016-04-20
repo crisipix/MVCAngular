@@ -17,8 +17,7 @@ namespace MVCAngular.Models
     {
         public DBContext()
         {
-            //he model backing the 'DBContext' context has changed since the database was created. Either manually delete/update the database
-            Database.SetInitializer<DBContext>(null);
+           
 
         }
 
@@ -30,6 +29,14 @@ namespace MVCAngular.Models
 
         public DbSet<Manga> Movies { get; set; }
         public DbSet<Anime> Anime { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //he model backing the 'DBContext' context has changed since the database was created. Either manually delete/update the database
+            Database.SetInitializer<DBContext>(null);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 
 }
