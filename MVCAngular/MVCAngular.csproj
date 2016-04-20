@@ -160,6 +160,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnimeController.cs" />
     <Compile Include="Controllers\HelloWorldController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MangasController.cs" />
@@ -167,18 +168,22 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Anime.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Manga.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\controllers\animeController.js" />
+    <Content Include="app\main.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -230,8 +235,14 @@
     <Content Include="Views\Mangas\Details.cshtml" />
     <Content Include="Views\Mangas\Edit.cshtml" />
     <Content Include="Views\Mangas\Index.cshtml" />
+    <Content Include="Views\Anime\Create.cshtml" />
+    <Content Include="Views\Anime\Delete.cshtml" />
+    <Content Include="Views\Anime\Details.cshtml" />
+    <Content Include="Views\Anime\Edit.cshtml" />
+    <Content Include="Views\Anime\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\services\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

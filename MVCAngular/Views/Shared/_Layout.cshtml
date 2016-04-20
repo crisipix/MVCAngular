@@ -6,7 +6,9 @@
     <title>@ViewBag.Title - MVC Angular App</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/app/main.js"></script>
+    <script src="~/app/controllers/animeController.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,6 +24,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Manga", "Index", "Mangas")</li>
+                    <li>@Html.ActionLink("Anime", "Index", "Anime")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("HelloWorld", "Index", "HelloWorld")</li>
