@@ -15,6 +15,12 @@ namespace MVCAngular.Controllers
         private DBContext db = new DBContext();
 
         // GET: Anime
+        public ActionResult IndexValues()
+        {
+            return Json(db.Anime.ToList(), JsonRequestBehavior.AllowGet);
+        }
+
+        // GET: Anime
         public ActionResult Index()
         {
             return View(db.Anime.ToList());
