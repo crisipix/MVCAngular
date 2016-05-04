@@ -6,13 +6,28 @@
 
 <h2>Index</h2>
 <div class="container" ng-app="app">
-    <div ng-controller="animeCtrl as ctrl">
+    <div id="angularDiv" ng-controller="animeCtrl as ctrl">
         {{ctrl.name}}
         <ul>
             <li ng-repeat="a in ctrl.anime">{{a | json}}</li>
         </ul>
         <div>{{ctrl.anime[0].Name}}</div>
-    </div>
+
+        <table class="table">
+            <tr>
+                <th ng-repeat="field in ctrl.fields">{{field}}</th>
+                <th>Manage</th>
+            </tr>
+            <tr ng-repeat="a in ctrl.anime">
+                <td ng-repeat="field in ctrl.fields">{{a[field]}}</td>
+                <td>
+                    <a ng-href="@Url.Action("Edit", "Anime", new{ })?id={{a.Id}}">Edit |</a>
+                    <a ng-href="@Url.Action("Details", "Anime", new { })?id={{a.Id}}">Details |</a>
+                    <a ng-href="@Url.Action("Delete", "Anime", new { })?id={{a.Id}}">Delete </a>
+                </td>
+            </tr>
+         </table>
+</div>
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
