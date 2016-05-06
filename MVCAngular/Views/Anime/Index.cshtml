@@ -12,18 +12,33 @@
             <li ng-repeat="a in ctrl.anime">{{a | json}}</li>
         </ul>
         <div>{{ctrl.anime[0].Name}}</div>
+        <button class="btn btn-primary" ng-click="ctrl.onAddAnime()">Add Anime</button>
 
         <table class="table">
             <tr>
                 <th ng-repeat="field in ctrl.fields">{{field}}</th>
                 <th>Manage</th>
             </tr>
+            <tr ng-if="ctrl.canAddAnime">
+                <td ng-repeat="field in ctrl.fields">
+                    <input type="text" class="form-control" placeholder="{{field}}" ng-model="ctrl.newAnime[field]" />
+                </td>
+                <td>
+                    <button class="btn btn-primary" ng-click="ctrl.onAdd()">Add</button>
+                    <button class="btn btn-primary" ng-click="ctrl.onCancel()">Cancel</button>
+                </td>
+            </tr>
             <tr ng-repeat="a in ctrl.anime">
                 <td ng-repeat="field in ctrl.fields">{{a[field]}}</td>
+                
                 <td>
-                    <a ng-href="@Url.Action("Edit", "Anime", new{ })?id={{a.Id}}">Edit |</a>
-                    <a ng-href="@Url.Action("Details", "Anime", new { })?id={{a.Id}}">Details |</a>
-                    <a ng-href="@Url.Action("Delete", "Anime", new { })?id={{a.Id}}">Delete </a>
+                    <a ng-href="@Url.Action("Edit", "Anime")?id={{a.Id}}"><span class="glyphicon glyphicon-pencil"></span> Edit | </a>
+                    <a ng-href="@Url.Action("Details", "Anime")?id={{a.Id}}"><span class="glyphicon glyphicon-search"></span> Details | </a>
+                    <a ng-href="@Url.Action("Delete", "Anime")?id={{a.Id}}"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                    <!--    Please note that I used ng-href and ng-src since we are now using dynamic properties in the URL:
+                            Using Angular markup like {{hash}} in an href attribute will make the link go to the wrong URL if the user clicks it
+                            before Angular has a chance to replace the {{hash}} markup with its value. Until Angular replaces the markup the link will be 
+                            broken and will most likely return a 404 error. The ngHref directive solves this problem.-->
                 </td>
             </tr>
          </table>

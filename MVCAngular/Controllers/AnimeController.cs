@@ -23,6 +23,8 @@ namespace MVCAngular.Controllers
         // GET: Anime
         public ActionResult Index()
         {
+            // after using the controller to get the values we can remove the 
+            // return of the list here and just render the view. 
             return View(db.Anime.ToList());
         }
 
