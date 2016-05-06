@@ -8,9 +8,9 @@
 <div class="container" ng-app="app">
     <div id="angularDiv" ng-controller="animeCtrl as ctrl">
         {{ctrl.name}}
-        <ul>
+        @*<ul>
             <li ng-repeat="a in ctrl.anime">{{a | json}}</li>
-        </ul>
+        </ul>*@
         <div>{{ctrl.anime[0].Name}}</div>
         <button class="btn btn-primary" ng-click="ctrl.onAddAnime()">Add Anime</button>
 

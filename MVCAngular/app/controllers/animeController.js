@@ -18,6 +18,9 @@
             console.log(vm.newAnime);
             $http.post('/MVCAngular/Anime/Save/', vm.newAnime).success(function (data) {
                 console.log(data);
+                vm.anime.push(data);
+                vm.newAnime = {};
+                vm.canAddAnime = !vm.canAddAnime;
             });
         };
         vm.onCancel = function () { vm.newAnime = {}; vm.canAddAnime = !vm.canAddAnime; };
