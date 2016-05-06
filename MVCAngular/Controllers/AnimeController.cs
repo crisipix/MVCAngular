@@ -97,6 +97,28 @@ namespace MVCAngular.Controllers
             return View(anime);
         }
 
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult Save([Bind(Include = "Id,Title,Release,Genre,Studio,Price,Rating")]  Anime anime)
+        {
+            if (ModelState.IsValid)
+            {
+                if (anime.Id > 0)
+                {
+                    db.Entry(anime).State = EntityState.Modified;
+                }
+                else
+                {
+                    db.Anime.Add(anime);
+                }
+                
+                db.SaveChanges();
+            }
+
+            return Json(anime, JsonRequestBehavior.AllowGet);
+        }
+
+
         // GET: Anime/Delete/5
         public ActionResult Delete(int? id)
         {

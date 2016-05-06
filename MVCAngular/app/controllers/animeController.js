@@ -14,8 +14,11 @@
         vm.canAddAnime = false;
         vm.onAddAnime = function () { vm.canAddAnime = !vm.canAddAnime; };
         vm.onAdd = function () {
-
+            vm.newAnime.Id = 0;
             console.log(vm.newAnime);
+            $http.post('/MVCAngular/Anime/Save/', vm.newAnime).success(function (data) {
+                console.log(data);
+            });
         };
         vm.onCancel = function () { vm.newAnime = {}; vm.canAddAnime = !vm.canAddAnime; };
 

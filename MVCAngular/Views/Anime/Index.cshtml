@@ -28,6 +28,9 @@
                     <button class="btn btn-primary" ng-click="ctrl.onCancel()">Cancel</button>
                 </td>
             </tr>
+            @*<tr ng-if="ctrl.canAddAnime">
+                <td>{{ctrl.newAnime | json}}</td>
+            </tr>*@
             <tr ng-repeat="a in ctrl.anime">
                 <td ng-repeat="field in ctrl.fields">{{a[field]}}</td>
                 
