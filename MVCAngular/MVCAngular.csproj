@@ -176,8 +176,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\controllers\animeController.js" />
+    <Content Include="app\controllers\dashController.js" />
     <Content Include="app\directives\loadingButton.js" />
     <Content Include="app\main.js" />
+    <Content Include="Content\angular-dashboard-framework.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\dragula.min.css" />
@@ -188,9 +190,16 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\AngularBootstrap\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\AngularBootstrap\ui-bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Dash\angular-dashboard-framework.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Dash\angular-dashboard-framework.min.js" />
+    <Content Include="Scripts\Dash\Structure\adf-structures-base.js" />
+    <Content Include="Scripts\Dash\Structure\adf-structures-base.min.js" />
+    <Content Include="Scripts\Dash\Widgets\adf-widget-linklist.js" />
     <Content Include="Scripts\Dragula\angular-dragula.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -205,6 +214,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Sortable.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

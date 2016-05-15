@@ -9,3 +9,14 @@
 <h2>Test Hello World Page</h2>
 
 <p>Hello World from our View Template!</p>
+<div class="container" ng-app="app">
+    <div id="angularDiv" ng-controller="dashCtrl as ctrl">
+        <div>{{ctrl.name}}</div>
+        <adf-dashboard name="{{ctrl.name}}"
+                       collapsible="{{ctrl.collapsible}}"
+                       maximizable="{{ctrl.maximizable}}"
+                       categories="{{ctrl.categories}}"
+                       structure="4-8"
+                       adf-model="ctrl.model" />
+    </div>
+</div>
