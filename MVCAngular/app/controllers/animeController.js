@@ -13,14 +13,22 @@
         vm.fields = [];
         vm.canAddAnime = false;
         vm.onAddAnime = function () { vm.canAddAnime = !vm.canAddAnime; };
+        vm.state = {
+            isAdding : false
+        };
         vm.onAdd = function () {
             vm.newAnime.Id = 0;
             console.log(vm.newAnime);
+            vm.state.isAdding = true;
             $http.post('/MVCAngular/Anime/Save/', vm.newAnime).success(function (data) {
                 console.log(data);
                 vm.anime.push(data);
                 vm.newAnime = {};
                 vm.canAddAnime = !vm.canAddAnime;
+                vm.state.isAdding = false;
+            }).error(function (error) {
+                vm.state.isAdding = false;
+
             });
         };
         vm.onCancel = function () { vm.newAnime = {}; vm.canAddAnime = !vm.canAddAnime; };

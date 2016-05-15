@@ -17,14 +17,20 @@
         <table class="table">
             <tr>
                 <th ng-repeat="field in ctrl.fields">{{field}}</th>
-                <th>Manage</th>
+                <th>Management</th>
             </tr>
             <tr ng-if="ctrl.canAddAnime">
                 <td ng-repeat="field in ctrl.fields">
                     <input type="text" class="form-control" placeholder="{{field}}" ng-model="ctrl.newAnime[field]" />
                 </td>
                 <td>
-                    <button class="btn btn-primary" ng-click="ctrl.onAdd()">Add</button>
+                    <button spin="ctrl.state.isAdding"
+                            class="btn btn-primary ladda-button"
+                            ng-click="ctrl.onAdd()"
+                            loading-button
+                            data-style="expand-left">
+                        <span class="ladda-label">Add</span>
+                    </button>
                     <button class="btn btn-primary" ng-click="ctrl.onCancel()">Cancel</button>
                 </td>
             </tr>
