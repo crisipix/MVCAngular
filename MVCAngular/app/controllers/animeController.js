@@ -7,6 +7,13 @@
     */
     var animeCtrl = function ($scope, $http) {
         var vm = this;
+
+        /*dragula
+        http://stackoverflow.com/questions/33744487/using-angular-dragula-without-requirejs
+        */
+        vm.items = ['Apple', 'Bagel', 'Caramel'];
+        vm.animals = ['Ape', 'Wolf', 'Fox'];
+
         vm.name = 'Anime Information';
         vm.anime = [{ Name: 'Hello' }, { Name: 'Hello' }, { Name: 'Hello' }];
         vm.newAnime = {};

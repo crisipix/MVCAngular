@@ -39,18 +39,42 @@
             </tr>*@
             <tr ng-repeat="a in ctrl.anime">
                 <td ng-repeat="field in ctrl.fields">{{a[field]}}</td>
-                
+
                 <td>
                     <a ng-href="@Url.Action("Edit", "Anime")?id={{a.Id}}"><span class="glyphicon glyphicon-pencil"></span> Edit | </a>
                     <a ng-href="@Url.Action("Details", "Anime")?id={{a.Id}}"><span class="glyphicon glyphicon-search"></span> Details | </a>
                     <a ng-href="@Url.Action("Delete", "Anime")?id={{a.Id}}"><span class="glyphicon glyphicon-trash"></span> Delete</a>
                     <!--    Please note that I used ng-href and ng-src since we are now using dynamic properties in the URL:
-                            Using Angular markup like {{hash}} in an href attribute will make the link go to the wrong URL if the user clicks it
-                            before Angular has a chance to replace the {{hash}} markup with its value. Until Angular replaces the markup the link will be 
-                            broken and will most likely return a 404 error. The ngHref directive solves this problem.-->
+            Using Angular markup like {{hash}} in an href attribute will make the link go to the wrong URL if the user clicks it
+            before Angular has a chance to replace the {{hash}} markup with its value. Until Angular replaces the markup the link will be
+            broken and will most likely return a 404 error. The ngHref directive solves this problem.-->
                 </td>
             </tr>
-         </table>
+        </table>
+        <div dragula='"bag-one"' dragula-model="ctrl.items" style="background-color:aquamarine">
+            <div ng-repeat="item in ctrl.items">{{ item }}</div>
+            Items
+        </div>
+        <div dragula='"bag-one"' dragula-model="ctrl.animals" style="background-color:aliceblue">
+            <div ng-repeat="item in ctrl.animals">{{ item }}</div>
+            Animals
+        </div>
+
+        @*<div class='wrapper'>
+            <div class='container' dragula='"another-bag"' dragula-model='ctrl.items' style="background-color:aquamarine">
+                <div ng-repeat='text in ctrl.items' ng-bind='text'></div>
+                ITEM
+            </div>
+            <div class='container' dragula='"another-bag"' dragula-model='ctrl.animals' style="background-color:aliceblue">
+                <div ng-repeat='text in ctrl.animals' ng-bind='text'></div>
+                OTHER
+            </div>
+        </div>*@
+
+      
+        @*<ul dragula='"bag-two"' dragula-model="ctrl.items">
+            <li ng-repeat="item in ctrl.items">{{item}}</li>
+        </ul>*@
 </div>
     <p>
         @Html.ActionLink("Create New", "Create")
