@@ -3,6 +3,7 @@
     //var angularDragula = require('angular-dragula');
 
     angular.module('app', [angularDragula(angular),
-        'adf', 'adf.structures.base','adf.widget.linklist' ]);
+        'adf', 'adf.structures.base', 'adf.widget.linklist',
+    'kendo.directives']);
     
 })();

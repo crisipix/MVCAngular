@@ -8,9 +8,10 @@
     <link href="~/Content/ladda-themeless.min.css" rel="stylesheet" />
     <link href="~/Content/dragula.min.css" rel="stylesheet"/>
     <link href="~/Content/angular-dashboard-framework.css" rel="stylesheet"/>
+    <link href="~/Content/kendo.common-bootstrap.core.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo.common-bootstrap.min.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <script src="~/Scripts/angular.min.js"></script>
     @*<script src="~/app/main.js"></script>
     <script src="~/app/controllers/animeController.js"></script>*@
 </head>
@@ -49,9 +50,16 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/Sortable.js"></script>
     <script src="~/Scripts/AngularBootstrap/ui-bootstrap.min.js"></script>
     <script src="~/Scripts/AngularBootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/Scripts/Kendo/kendo.core.min.js"></script>
+    <script src="~/Scripts/Kendo/kendo.angular.min.js"></script>
+    <script src="~/Scripts/Kendo/kendo.popup.min.js"></script>
+    <script src="~/Scripts/Kendo/kendo.calendar.min.js"></script>
+    <script src="~/Scripts/Kendo/kendo.datepicker.min.js"></script>
+
     <script src="~/Scripts/Ladda/spin.min.js"></script>
     <script src="~/Scripts/Ladda/ladda.min.js"></script>
     <script src="~/Scripts/Ladda/ladda.jquery.min.js"></script>
@@ -63,3 +71,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+@* http://docs.telerik.com/kendo-ui/AngularJS/introduction *@

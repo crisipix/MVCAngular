@@ -12,6 +12,8 @@
 <div class="container" ng-app="app">
     <div id="angularDiv" ng-controller="dashCtrl as ctrl">
         <div>{{ctrl.name}}</div>
+        <label>Today: <input kendo-date-picker /></label>
+
         <adf-dashboard name="{{ctrl.name}}"
                        collapsible="{{ctrl.collapsible}}"
                        maximizable="{{ctrl.maximizable}}"
